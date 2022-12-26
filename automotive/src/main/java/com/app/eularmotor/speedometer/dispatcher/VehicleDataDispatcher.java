@@ -41,7 +41,6 @@ public class VehicleDataDispatcher {
                     @Override
                     public void onFailure() {
                         Log.d(TAG, "onFailure: ...............");
-                        SpeedRepository.getInstance(EularMotorApplication.getApplication()).delete(speedData.size());
                     }
                 });
         }, SYNC_DURATION);//every 5 sec.
