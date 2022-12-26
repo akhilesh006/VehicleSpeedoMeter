@@ -16,3 +16,9 @@ If data is not sent to server by any reason then data will be kept in database a
 
 VehicleService -> SpeedReceiver: Send broadcast event every 500ms.
 SpeedReceiver -> SpeedManager:Post on MutableLiveData<SpeedModel> and Insert into SpeedRepository(database)
+
+Following library is used in the project:
+1. Retrofit - REST API calls
+2. OKHTTP - Socket communication
+3. Room - ORM for Database
+4. Live data: Observer pattern
