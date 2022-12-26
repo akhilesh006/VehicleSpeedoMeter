@@ -4,6 +4,9 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+/**
+ * A model class which is used in ROOM db as table name.
+ */
 @Entity(tableName="speed_table")
 public class SpeedModel {
 

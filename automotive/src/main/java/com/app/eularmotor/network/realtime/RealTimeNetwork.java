@@ -11,6 +11,9 @@ import okhttp3.Response;
 import okhttp3.WebSocket;
 import okhttp3.WebSocketListener;
 
+/**
+ * This class is responsible to send data to server using a socket connection for real time communication.
+ */
 public class RealTimeNetwork extends NetworkProviderHandler {
 
     private static final String TAG = "RealTimeNetwork";

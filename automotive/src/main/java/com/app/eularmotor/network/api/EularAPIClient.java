@@ -4,6 +4,9 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * An API provider for HTTPS client.
+ */
 public class EularAPIClient {
     private static final EularAPIClient INSTANCE = new EularAPIClient();
     private static EularAPI eularAPI;

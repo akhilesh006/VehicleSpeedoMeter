@@ -8,6 +8,9 @@ import com.app.eularmotor.data.model.SpeedModel;
 import com.app.eularmotor.data.repository.SpeedRepository;
 import com.app.eularmotor.speedometer.model.VehicleModel;
 
+/**
+ * A manager class which is responsible for managing the speed data at application layer.
+ */
 public class SpeedManager {
 
     private static final SpeedManager INSTANCE = new SpeedManager();
@@ -19,6 +22,10 @@ public class SpeedManager {
         return INSTANCE;
     }
 
+    /**
+     * Update the mutable live data object, and write speed data on database.
+     * @param speed current speed
+     */
     public synchronized void setCurrentSpeed(int speed){
         //Display on UI
         currentSpeed.postValue(new VehicleModel(speed));

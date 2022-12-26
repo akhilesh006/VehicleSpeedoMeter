@@ -9,6 +9,9 @@ import com.app.eularmotor.data.model.SpeedModel;
 
 import java.util.List;
 
+/**
+ * A Dao class responsible for CRUD queries.
+ */
 @androidx.room.Dao
 public interface SpeedDao {
 

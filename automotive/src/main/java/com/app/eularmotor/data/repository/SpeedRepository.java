@@ -12,6 +12,9 @@ import com.app.eularmotor.executor.DefaultThreadExecutorSupplier;
 
 import java.util.List;
 
+/**
+ * A repository class which is responsible to CRUD operation on DB.
+ */
 public class SpeedRepository {
 
     private static final String TAG = "SpeedRepository";

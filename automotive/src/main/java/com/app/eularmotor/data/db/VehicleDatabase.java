@@ -13,6 +13,9 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import com.app.eularmotor.data.dao.SpeedDao;
 import com.app.eularmotor.data.model.SpeedModel;
 
+/**
+ * A database class which is responsible for database creation and db version change.
+ */
 @Database(entities = {SpeedModel.class}, version = 2)
 public abstract class VehicleDatabase extends RoomDatabase {
 

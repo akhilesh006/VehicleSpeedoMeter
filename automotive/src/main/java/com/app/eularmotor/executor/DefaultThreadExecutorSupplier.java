@@ -3,6 +3,9 @@ package com.app.eularmotor.executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * Executor class for background activity on constant pool.
+ */
 public class DefaultThreadExecutorSupplier {
 
     private static final DefaultThreadExecutorSupplier INSTANCE = new DefaultThreadExecutorSupplier();

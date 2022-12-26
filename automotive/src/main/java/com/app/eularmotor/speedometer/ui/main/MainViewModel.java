@@ -8,6 +8,10 @@ import com.app.eularmotor.speedometer.model.VehicleModel;
 
 public class MainViewModel extends ViewModel {
 
+    /**
+     * Return current speed for vehicle.
+     * @return LiveData<VehicleModel> Live observable data.
+     */
     public LiveData<VehicleModel> getCurrentSpeed(){
         return SpeedManager.getINSTANCE().getCurrentSpeed();
     }

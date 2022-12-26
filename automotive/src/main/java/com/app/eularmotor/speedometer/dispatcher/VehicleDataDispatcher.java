@@ -11,6 +11,9 @@ import com.app.eularmotor.scheduler.TaskScheduler;
 
 import java.util.List;
 
+/**
+ * A singleton class which is responsible for dispatching data to backend.
+ */
 public class VehicleDataDispatcher {
 
     private static final String TAG = "VehicleDataDispatcher";
@@ -25,6 +28,11 @@ public class VehicleDataDispatcher {
         return INSTANCE;
     }
 
+    /**
+     * Start the scheduler for every 5 seconds to upload the data to server
+     * onSuccess: Flush the uploaded data from the database
+     * onFailure: Do nothing
+     */
     public void start() {
         scheduler = new TaskScheduler();
         scheduler.scheduleEvery(() -> {

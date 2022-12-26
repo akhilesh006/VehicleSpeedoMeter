@@ -11,6 +11,7 @@ public class SpeedReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
 
+            //On receive broadcast, set the current speed.
             int speed = intent.getIntExtra("speed",-1);
             SpeedManager.getINSTANCE().setCurrentSpeed(speed);
 

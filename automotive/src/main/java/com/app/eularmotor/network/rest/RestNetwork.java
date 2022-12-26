@@ -11,6 +11,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * This class is responsible to send data to server using HTTPS rest API.
+ */
 public class RestNetwork extends NetworkProviderHandler {
     private static final String TAG = "RestNetwork";
 

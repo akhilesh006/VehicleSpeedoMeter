@@ -13,6 +13,9 @@ import com.app.eularmotor.speedometer.dispatcher.VehicleDataDispatcher;
 import com.app.eularmotor.services.VehicleService;
 import com.app.eularmotor.speedometer.ui.main.MainFragment;
 
+/**
+ * A main activity for displaying a screen to the user.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
@@ -33,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         Log.d(TAG, "onStart: bind service");
+        //Start the service to broadcast the speed data, this will be removed after HAL implementation
         startService(new Intent(this, VehicleService.class));
+        //Start the dispatcher to call the upload service every 5 seconds.
         VehicleDataDispatcher.getInstance().start();
     }
 
@@ -41,8 +46,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         Log.d(TAG, "onStop: unbind service");
+        //Stop service
         stopService(new Intent(this, VehicleService.class));
+        //Stop the dispatcher.
         VehicleDataDispatcher.getInstance().stop();
+        //Close any opened connection
         NetworkProviderHandler.getInstance().closeConnection();
     }
 }

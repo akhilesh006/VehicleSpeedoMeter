@@ -10,6 +10,9 @@ import com.app.eularmotor.speedometer.receiver.SpeedReceiver;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * This service is responsible for sending data to application every 500ms.
+ */
 public class VehicleService extends Service {
 
     private static final String TAG = "VehicleService";
