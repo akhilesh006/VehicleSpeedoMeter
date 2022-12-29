@@ -1,7 +1,8 @@
 # VehicleSpeedoMeter
 ## Problem Statement:
-    This application is intended to receive the Vehicle's speed data every 500 milliseconds, The Application is responsible to
-    render the real-time speed data on UI. The application is also required to upload the data on the backend server every 5 seconds.
+    This application is intended to receive the Vehicle's speed data every 500 milliseconds,
+    The Application is responsible to render the real-time speed data on UI. The application 
+    is also required to upload the data on the backend server every 5 seconds.
 
 ## Solution Proposed:
 The Application has created a service that broadcasts data every 500 milliseconds(I haven't used Local broadcast manager as it would be an external app)
