@@ -8,10 +8,7 @@ import android.util.Log;
 
 import com.app.eularmotor.IVehicleHAL;
 import com.app.eularmotor.IVehicleSpeedListener;
-import com.app.halsystemapp.data.model.SpeedModel;
-import com.app.halsystemapp.data.repository.SpeedRepository;
 import com.app.halsystemapp.dispatcher.AppDataDispatcher;
-import com.app.halsystemapp.utils.TaskScheduler;
 import com.app.halsystemapp.dispatcher.BackendDataDispatcher;
 import com.app.halsystemapp.network.NetworkProviderHandler;
 

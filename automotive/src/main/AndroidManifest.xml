@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.app.eularmotor">
 
+    <uses-permission android:name="com.app.halsystemapp.SYSTEM_PERMISSION" />
+
     <queries>
         <package android:name="com.app.halsystemapp" />
     </queries>

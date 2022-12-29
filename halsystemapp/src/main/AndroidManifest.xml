@@ -4,6 +4,12 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <permission
+        android:name="com.app.halsystemapp.SYSTEM_PERMISSION"
+        android:permissionGroup="android.permission-group.SYSTEM_PERMISSION"
+        android:protectionLevel="signature" />
+
+
     <application
         android:name="com.app.halsystemapp.EularMotorApplication"
         android:allowBackup="true"
@@ -17,7 +23,8 @@
         <service
             android:name=".VehicleService"
             android:enabled="true"
-            android:exported="true">
+            android:exported="true"
+            android:permission="com.app.halsystemapp.SYSTEM_PERMISSION">
             <intent-filter>
                 <action android:name="service_vehicle" />
             </intent-filter>

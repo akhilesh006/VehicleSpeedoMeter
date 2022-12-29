@@ -1,7 +1,6 @@
 package com.app.halsystemapp.dispatcher;
 
 import android.os.RemoteException;
-import android.util.Log;
 
 import com.app.eularmotor.IVehicleSpeedListener;
 import com.app.halsystemapp.EularMotorApplication;
