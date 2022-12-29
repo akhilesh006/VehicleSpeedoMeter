@@ -1,17 +1,15 @@
 package com.app.eularmotor.speedometer.ui.main;
 
-import androidx.lifecycle.ViewModelProvider;
-
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.app.eularmotor.R;
 
@@ -41,7 +39,7 @@ public class MainFragment extends Fragment {
         super.onStart();
         mViewModel = new ViewModelProvider(this).get(MainViewModel.class);
         // start an observer, if any change in speed data, render it on the UI
-        mViewModel.getCurrentSpeed().observe(this,speed ->{
+        mViewModel.getCurrentSpeed().observe(this, speed -> {
             //Display the current speed on UI
             vehicleSpeed.setText(String.valueOf(speed.getSpeed()));
         });

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/EularMotor.iml" filepath="$PROJECT_DIR$/.idea/modules/EularMotor.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/automotive/EularMotor.automotive.iml" filepath="$PROJECT_DIR$/.idea/modules/automotive/EularMotor.automotive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/halsystemapp/EularMotor.halsystemapp.iml" filepath="$PROJECT_DIR$/.idea/modules/halsystemapp/EularMotor.halsystemapp.iml" />
     </modules>
   </component>
 </project>

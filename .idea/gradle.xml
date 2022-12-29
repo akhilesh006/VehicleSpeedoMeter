@@ -12,6 +12,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/automotive" />
+            <option value="$PROJECT_DIR$/halsystemapp" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
