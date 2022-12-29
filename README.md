@@ -28,4 +28,4 @@ The following library is used in the project:
 1. Create a module which has a service, and starts using AIDL which act as system app, 
 2. Update UI application from system app, 
 3. Upload data to backend from system app, 
-4. upload only latest 10 record to server when connectivity available every 5 seconds
+4. Upload only latest 10 record to server when connectivity available every 5 seconds, and when syem will be in idle state, rest of data will be pushed.
