@@ -22,3 +22,9 @@ The following library is used in the project:
 2. OKHTTP - Socket communication
 3. Room - ORM for Database
 4. Live data: Observer pattern
+
+## New requirement implementation: 
+1. Create a module which has a service, and starts using AIDL which act as system app, 
+2. Update UI application from system app, 
+3. Upload data to backend from system app, 
+4. upload only latest 10 record to server when connectivity available every 5 seconds
