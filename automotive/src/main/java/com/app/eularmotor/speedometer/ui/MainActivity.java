@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.app.eularmotor.IVehicleHAL;
 import com.app.eularmotor.IVehicleSpeedListener;
 import com.app.eularmotor.R;
+import com.app.eularmotor.speedometer.ApplicationService;
 import com.app.eularmotor.speedometer.SpeedManager;
 import com.app.eularmotor.speedometer.ui.main.MainFragment;
 
@@ -23,30 +24,6 @@ import com.app.eularmotor.speedometer.ui.main.MainFragment;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
-    private IVehicleHAL vehicleService;
-    private final ServiceConnection serviceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            Log.d(TAG, "onServiceConnected: service connected.....");
-            vehicleService = IVehicleHAL.Stub.asInterface(iBinder);
-            try {
-                vehicleService.startVehicleService(new IVehicleSpeedListener.Stub() {
-                    @Override
-                    public void deliverCurrentSpeed(int speed) throws RemoteException {
-                        Log.d(TAG, "deliverCurrentSpeed: " + speed);
-                        SpeedManager.getINSTANCE().setCurrentSpeed(speed);
-                    }
-                });
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName componentName) {
-            vehicleService = null;
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +39,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        //Start the service to broadcast the speed data, this will be removed after HAL implementation
-        //bind service
-        initServiceConnection();
+        //Start the service to keep getting the speed data from HAL service
+        startService(new Intent(this, ApplicationService.class));
         Log.d(TAG, "onStart: bind service");
     }
 
@@ -72,18 +48,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         Log.d(TAG, "onStop: unbind service");
-        //unbind the service.
-        unbindService(serviceConnection);
-    }
-
-    private void initServiceConnection() {
-        Log.d(TAG, "initServiceConnection: " + vehicleService);
-        if (vehicleService == null) {
-            Intent intent = new Intent();
-            intent.setAction("service_vehicle");
-            intent.setPackage("com.app.halsystemapp");
-            bindService(intent, serviceConnection, Service.BIND_AUTO_CREATE);
-        }
+        stopService(new Intent(this, ApplicationService.class));
     }
 
 }

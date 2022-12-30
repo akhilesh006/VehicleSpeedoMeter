@@ -36,12 +36,6 @@ public class VehicleService extends Service {
     }
 
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d(TAG, "onStartCommand: intent :" + intent);
-        return START_STICKY;
-    }
-
-    @Override
     public IBinder onBind(Intent intent) {
         return iVehicleHALBinder;
     }
